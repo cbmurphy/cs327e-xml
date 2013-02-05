@@ -57,13 +57,10 @@ i = 0
 results = []
 for tag in lst:
   if tag == inputlst[0]:
-    print i+1
     if traverseTree(nodes[i], 1):
       results.append(i+1)
-    i += 1
+  i += 1
 
 
 print len(results)
 print results
-    
-    
