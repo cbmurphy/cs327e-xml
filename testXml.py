@@ -7,9 +7,6 @@ nodes = []     #list of nodes corresponding to tag list
 
 inputlst = []  
 
-tree = ET.parse('xml.xml')
-inpt = ET.parse('xml2.xml')
-
 def parseTree(node):
   taglst.append(node.tag)
   nodes.append(node)
@@ -30,11 +27,16 @@ def traverseTree(node1, idx):
       return traverseTree(child, idx + 1)
   return False
     
-root1 = tree.getroot()
-root2 = inpt.getroot()
+infile = open('input.xml', 'r')
+xmlstr = infile.read()
+root = ET.fromstring('<xml>' + xmlstr + '</xml>')
 
-parseTree(root1)
-parseInput(root2)
+for idx, child  in enumerate(root):
+  if idx == 0:
+    parseTree(child)
+  else:
+    parseInput(child)
+
 
 results = []
 for idx, tag in enumerate(taglst):
