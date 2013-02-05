@@ -36,13 +36,11 @@ root2 = inpt.getroot()
 parseTree(root1)
 parseInput(root2)
 
-i = 0
 results = []
-for tag in taglst:
+for idx, tag in enumerate(taglst):
   if tag == inputlst[0]:
-    if traverseTree(nodes[i], 1):
-      results.append(i+1)
-  i += 1
+    if traverseTree(nodes[idx], 1):
+      results.append(idx+1)
 
 print len(results)
 for num in results:
