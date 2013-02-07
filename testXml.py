@@ -26,24 +26,52 @@ def traverseTree(node1, idx):
         return True
       return traverseTree(child, idx + 1)
   return False
-    
-infile = open('input.xml', 'r')
-xmlstr = infile.read()
-root = ET.fromstring('<xml>' + xmlstr + '</xml>')
 
-for idx, child  in enumerate(root):
-  if idx == 0:
-    parseTree(child)
-  else:
-    parseInput(child)
+# -------------
+# xml_print
+# -------------
+
+def xml_print(w, results):
+  """ 
+  print the results
+  w is a writer
+  results is a list containing matches
+  """
+  w.write(str(len(results)) + '\n')
+  for num in results:
+    w.write(str(num) + '\n')
 
 
-results = []
-for idx, tag in enumerate(taglst):
-  if tag == inputlst[0]:
-    if traverseTree(nodes[idx], 1):
-      results.append(idx+1)
+# -------------
+# xml_solve
+# -------------
 
-print len(results)
-for num in results:
-  print num
+def xml_solve(r, w): 
+  """ 
+  read, search and print
+  r is a reader
+  w is a writer
+  """
+
+  xmlstr = r.read()
+  root = ET.fromstring('<xml>' + xmlstr + '</xml>')
+
+  for idx, child  in enumerate(root):
+    if idx == 0:
+      parseTree(child)
+    else:
+      parseInput(child)
+
+  results = []
+  for idx, tag in enumerate(taglst):
+    if tag == inputlst[0]:
+      if traverseTree(nodes[idx], 1):
+        results.append(idx+1)
+
+  xml_print(w, results)
+
+
+# code bellow goes to RunXML.py
+import sys
+
+xml_solve(sys.stdin, sys.stdout)
