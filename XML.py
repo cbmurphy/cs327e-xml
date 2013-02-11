@@ -82,7 +82,8 @@ def xml_solve(r, w):
   r is a reader
   w is a writer
   """
-
+  global taglst
+  global nodes
   xmlstr = r.read()
   root = ET.fromstring('<xml>' + xmlstr + '</xml>')
 
@@ -94,6 +95,8 @@ def xml_solve(r, w):
         results.append(idx+1)
 
   xml_print(w, results)
+  taglst = []
+  nodes = []
 
 # ----
 # main
@@ -105,5 +108,3 @@ if __name__ == "__main__":
     xml_solve(f, sys.stdout)
   except:
     print "File missing!"
-else:
-  xml_solve(sys.stdin, sys.stdout)
