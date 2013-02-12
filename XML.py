@@ -7,8 +7,6 @@
 import xml.etree.ElementTree as ET
 import sys
 
-#taglst = []    #list of tags from XML
-#nodes = []     #list of nodes corresponding to tag list in input
 
 # -------------
 # xml_print
@@ -30,7 +28,7 @@ def xml_print(w, results):
 def parseTree(node, taglst, nodes):
 
   """
-  create list of tags in XML
+  create list of tags in XML buy traversing the tree
   node is root of a sub-tree
   taglst is a list of tags
   nodes is a list of sub-tree root
@@ -96,9 +94,9 @@ def xml_solve(r, w):
   assert len(taglst) == 0
   assert len(nodes) == 0
   parseTree(root[0], taglst, nodes)
-  results = []
   assert len(taglst) != 0
   assert len(nodes) != 0
+  results = []
   for idx, tag in enumerate(taglst):
     if tag == root[1].tag:
       if dfs_new(nodes[idx], root[1]):
