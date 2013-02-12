@@ -24,6 +24,7 @@ def xml_print(w, results):
   
   w.write(str(len(results)) + '\n')
   for num in results:
+    assert num > 0
     w.write(str(num) + '\n')
 
 def parseTree(node):
@@ -85,10 +86,15 @@ def xml_solve(r, w):
   global taglst
   global nodes
   xmlstr = r.read()
+  assert len(xmlstr) > 0
   root = ET.fromstring('<xml>' + xmlstr + '</xml>')
 
+  assert len(taglst) == 0
+  assert len(nodes) == 0
   parseTree(root[0])
   results = []
+  assert len(taglst) != 0
+  assert len(nodes) != 0
   for idx, tag in enumerate(taglst):
     if tag == root[1].tag:
       if dfs_new(nodes[idx], root[1]):
