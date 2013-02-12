@@ -29,9 +29,9 @@ turnin-verify:
 	turnin --verify hychyc07 cs327epj2
 
 zip:
-	zip -r XML.zip makefile XML.html XML.log XML.py \
+	zip -r XML.zip makefile README.txt XML.html XML.log XML.py \
 	RunXML.in RunXML.out RunXML.py SphereXML.py \
-	TestXML.py TestXML.out
+	TestXML.py TestXML.out 
 
 clean:
 	rm -f *.pyc
