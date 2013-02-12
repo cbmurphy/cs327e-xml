@@ -46,39 +46,109 @@ class TestXML (unittest.TestCase) :
   # -----------
 
   def test_parseTree_1(self):
-    self.assert_(0)
+    xmlstr = """<a></a>"""
+    root = ET.fromstring(xmlstr)
+    taglst = []
+    nodes = []
+    parseTree(root, taglst, nodes)
+
+    self.assert_(len(taglst) == 1)
+    self.assert_(taglst[0] == 'a')
+    self.assert_(len(nodes) == 1)
+    self.assert_(nodes[0].tag == 'a')
 
   def test_parseTree_2(self):
-    self.assert_(0)
+    xmlstr = """<a><b></b></a>"""
+    root = ET.fromstring(xmlstr)
+    taglst = []
+    nodes = []
+    parseTree(root, taglst, nodes)
+
+    self.assert_(len(taglst) == 2)
+    self.assert_(taglst[0] == 'a')
+    self.assert_(taglst[1] == 'b')
+    self.assert_(len(nodes) == 2)
+    self.assert_(nodes[0].tag == 'a')
+    self.assert_(nodes[0][0].tag == 'b')
+    self.assert_(nodes[1].tag == 'b')
 
   def test_parseTree_3(self):
-    self.assert_(0)
+    xmlstr = """<a></a>"""
+    root = ET.fromstring(xmlstr)
+    taglst = []
+    nodes = []
+    parseTree(root, taglst, nodes)
+
+    self.assert_(len(taglst) == 1)
+    self.assert_(taglst[0] == 'a')
+    self.assert_(len(nodes) == 1)
+    self.assert_(nodes[0].tag == 'a')
 
   # --------
   # dfs_new 
   # --------
 
   def test_dfs_new_1(self):
-    self.assert_(0)
+    xmlstr1 = """<a></a>"""
+    root1 = ET.fromstring(xmlstr1)
+    xmlstr2 = """<a></a>"""
+    root2 = ET.fromstring(xmlstr2)
+    self.assert_(dfs_new(root1, root2))
 
   def test_dfs_new_2(self):
-    self.assert_(0)
+    xmlstr1 = """<a><b></b></a>"""
+    root1 = ET.fromstring(xmlstr1)
+    xmlstr2 = """<a><c></c></a>"""
+    root2 = ET.fromstring(xmlstr2)
+    self.assert_(not dfs_new(root1, root2))
 
   def test_dfs_new_3(self):
-    self.assert_(0)
+    xmlstr1 = """<a><b><d></d></b><c></c></a>"""
+    root1 = ET.fromstring(xmlstr1)
+    xmlstr2 = """<a><b></b><c></c></a>"""
+    root2 = ET.fromstring(xmlstr2)
+    self.assert_(dfs_new(root1, root2))
 
   # -----
   # solve
   # -----
 
   def test_solve_1(self):
-    self.assert_(0)
+    r = StringIO.StringIO("<t></t>\n<t></t>\n")
+    w = StringIO.StringIO()
+    xml_solve(r, w)
+    self.assert_(w.getvalue() == "1\n1\n")
 
   def test_solve_2(self):
-    self.assert_(0)
+    r = StringIO.StringIO("<t></t>\n<s></s>\n")
+    w = StringIO.StringIO()
+    xml_solve(r, w)
+    self.assert_(w.getvalue() == "0\n")
 
   def test_solve_3(self):
-    self.assert_(0)
+    r = StringIO.StringIO("""
+      <t1>
+        <t2>
+          <t3></t3>
+          <t4></t4>
+        </t2>
+        <t5>
+          <t2>
+            <t4><t6></t6></t4>
+            <t3></t3>
+          </t2>
+        </t5>
+      </t1>
+
+      <t2>
+        <t4><t6></t6></t4>
+        <t3></t3>
+      </t2>
+      """)
+    w = StringIO.StringIO()
+    xml_solve(r, w)
+    self.assert_(w.getvalue() == "1\n6\n")
+
 # ----
 # main
 # ----
