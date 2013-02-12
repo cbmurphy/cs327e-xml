@@ -7,8 +7,8 @@
 import xml.etree.ElementTree as ET
 import sys
 
-taglst = []    #list of tags from XML
-nodes = []     #list of nodes corresponding to tag list in input
+#taglst = []    #list of tags from XML
+#nodes = []     #list of nodes corresponding to tag list in input
 
 # -------------
 # xml_print
@@ -27,18 +27,19 @@ def xml_print(w, results):
     assert num > 0
     w.write(str(num) + '\n')
 
-def parseTree(node):
+def parseTree(node, taglst, nodes):
 
   """
   create list of tags in XML
   node is root of a sub-tree
+  taglst is a list of tags
+  nodes is a list of sub-tree root
   """ 
   
   taglst.append(node.tag)
   nodes.append(node)
   for x in node:
-    parseTree(x)
-      
+    parseTree(x, taglst, nodes)
 
 def dfs_new(root, root2):
 
@@ -86,15 +87,15 @@ def xml_solve(r, w):
   r is a reader
   w is a writer
   """
-  global taglst
-  global nodes
   xmlstr = r.read()
   assert len(xmlstr) > 0
   root = ET.fromstring('<xml>' + xmlstr + '</xml>')
 
+  taglst = []
+  nodes = []
   assert len(taglst) == 0
   assert len(nodes) == 0
-  parseTree(root[0])
+  parseTree(root[0], taglst, nodes)
   results = []
   assert len(taglst) != 0
   assert len(nodes) != 0
@@ -104,8 +105,6 @@ def xml_solve(r, w):
         results.append(idx+1)
 
   xml_print(w, results)
-  taglst = []
-  nodes = []
 
 # ----
 # main
