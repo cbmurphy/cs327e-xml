@@ -29,7 +29,10 @@ def xml_print(w, results):
 
 def parseTree(node):
 
-  ''' create list of tags in XML'''
+  """
+  create list of tags in XML
+  node is root of a sub-tree
+  """ 
   
   taglst.append(node.tag)
   nodes.append(node)
@@ -39,11 +42,11 @@ def parseTree(node):
 
 def dfs_new(root, root2):
 
-  '''
+  """ 
   depth first search function to check tree
   root is the occurence of the first node
   root2 is the input tree
-  '''
+  """ 
   
   len1 = len(root)
   len2 = len(root2)
