@@ -41,6 +41,12 @@ class TestXML (unittest.TestCase) :
     xml_print(w, res)
     self.assert_(w.getvalue() == "3\n1\n2\n3\n")
 
+  def test_print_4(self):
+    w = StringIO.StringIO()
+    res = [1, 2, 3, 6, 8, 19, 24]
+    xml_print(w, res)
+    self.assert_(w.getvalue() == "7\n1\n2\n3\n6\n8\n19\n24\n")
+
   # -----------
   # parseTree 
   # -----------
@@ -84,6 +90,28 @@ class TestXML (unittest.TestCase) :
     self.assert_(len(nodes) == 1)
     self.assert_(nodes[0].tag == 'a')
 
+  def test_parseTree_4(self):
+    xmlstr = """<a><b><c></c><d></d><e><f></f></e></b></a>"""
+    root = ET.fromstring(xmlstr)
+    taglst = []
+    nodes = []
+    parseTree(root, taglst, nodes)
+
+    self.assert_(len(taglst) == 6)
+    self.assert_(taglst[0] == 'a')
+    self.assert_(taglst[1] == 'b')
+    self.assert_(taglst[2] == 'c')
+    self.assert_(taglst[3] == 'd')
+    self.assert_(taglst[4] == 'e')
+    self.assert_(taglst[5] == 'f')
+    self.assert_(len(nodes) == 6)
+    self.assert_(nodes[0].tag == 'a')
+    self.assert_(nodes[1].tag == 'b')
+    self.assert_(nodes[2].tag == 'c')
+    self.assert_(nodes[3].tag == 'd')
+    self.assert_(nodes[4].tag == 'e')
+    self.assert_(nodes[5].tag == 'f')
+
   # --------
   # dfs_new 
   # --------
@@ -108,6 +136,15 @@ class TestXML (unittest.TestCase) :
     xmlstr2 = """<a><b></b><c></c></a>"""
     root2 = ET.fromstring(xmlstr2)
     self.assert_(dfs_new(root1, root2))
+
+  def test_dfs_new_4(self):
+    xmlstr1 = """<a><b><d></d></b><c></c></a>"""
+    root1 = ET.fromstring(xmlstr1)
+    xmlstr2 = """<a><b></b><c></c></a>"""
+    root2 = ET.fromstring(xmlstr2)
+    self.assert_(not dfs_new(root2, root1))
+
+  
 
   # -----
   # solve
@@ -148,6 +185,12 @@ class TestXML (unittest.TestCase) :
     w = StringIO.StringIO()
     xml_solve(r, w)
     self.assert_(w.getvalue() == "1\n6\n")
+
+  def test_solve_4(self):
+    r = StringIO.StringIO("<t><s></s></t>\n<s><u></u></s>\n")
+    w = StringIO.StringIO()
+    xml_solve(r, w)
+    self.assert_(w.getvalue() == "0\n")
 
 # ----
 # main
