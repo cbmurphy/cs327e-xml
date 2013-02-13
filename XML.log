@@ -1,0 +1,170 @@
+commit fc8ebd9d7bfe0a0a692f5f35711b0544a3231a8f
+Author: cbmurphy <cbmurphy@utexas.edu>
+Date:   Wed Feb 13 14:38:58 2013 -0600
+
+    Update README.txt
+    
+    Added personal information. Still incomplete.
+
+commit 5a7c9c94f034e700379ec52ce93b83a1267b44a5
+Author: Collin Murphy <cbmurphy@utexas.edu>
+Date:   Wed Feb 13 12:37:40 2013 -0600
+
+    Added new unit tests
+
+commit 4259df8cb1ca50362678d56a8eb1889cf56e3916
+Author: Collin Murphy <cbmurphy@utexas.edu>
+Date:   Wed Feb 13 12:16:17 2013 -0600
+
+    Added script to makefile to automate turnin
+
+commit 2a91dd586518ae71430be3c63761bb8c1a6e2064
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 17:35:14 2013 -0600
+
+    updated the makefile to include the README to the zip
+
+commit ad028cd6e7081a95bcfa332d2e96d843169f7fb7
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 17:18:04 2013 -0600
+
+    added minor comments
+
+commit 5bbab04792bca08837c968fce93a005e93daf04f
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 17:11:59 2013 -0600
+
+    added simple unit tests
+
+commit 90ce4aa86d21fb967ecce1bd7c8b760cdd9ad5cb
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 16:50:18 2013 -0600
+
+    removed the global variables
+
+commit 8f3f4aa936c5163b69d66b2262aa131b47402ff6
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 13:39:53 2013 -0600
+
+    added simple unit tests for xml_print
+
+commit bcba3d6e6df1fbbca2f2c9be51e2d680ee2fbbba
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 13:27:25 2013 -0600
+
+    minor comments
+
+commit 6f8d2a7c30f1ba7c0d0cc960e73313264c644c17
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 13:21:18 2013 -0600
+
+    added couple of assert
+
+commit 3671b17c0aa885a5dae3e0105c348bea0e59c295
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 13:02:13 2013 -0600
+
+    added empty functions for the unit test code
+
+commit dda3f2d6d5714db365c7e87481c56ae3aa46622e
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 12 12:40:20 2013 -0600
+
+    updated SphereXML.py by combining XML.py and RunXML.py
+
+commit 002f60ae520c2e92e59cfde469be3b606df95b5b
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Mon Feb 11 15:36:44 2013 -0600
+
+    partially updated the readme file
+
+commit bc97007ad3e87d877712121413549455cb2ae7ee
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Mon Feb 11 15:25:37 2013 -0600
+
+    created acceptance test in and out based on existing tests
+
+commit 8e0859ed4adb6057173393113f5de4a5040c1a54
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Mon Feb 11 15:20:03 2013 -0600
+
+    a new test case
+
+commit 384c9a391f16e4b6b65f5ae71721488eefd86845
+Merge: e7604b0 1ce08c6
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Mon Feb 11 14:33:24 2013 -0600
+
+    Merge branch 'master' of github.com:cbmurphy/cs327e-xml
+
+commit 1ce08c6333fd780ec20f1f2644bfd9833e4acfa2
+Author: Collin Murphy <cbmurphy@utexas.edu>
+Date:   Fri Feb 8 22:08:46 2013 -0600
+
+    Enhanced code and added comments
+
+commit e7604b014224edd524b5142b629c53b7b7cae73f
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Fri Feb 8 21:37:31 2013 -0600
+
+    more test cases
+
+commit 2c789bee68c27304c64c32406f2922d610b73ad5
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Fri Feb 8 17:44:45 2013 -0600
+
+    some test cases + more than one child
+
+commit d8720978817820be179863e0319006d726037d36
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Wed Feb 6 21:05:51 2013 -0600
+
+    renaming files and splitted in to two files
+
+commit a9684219d166392420754929a75ae5a7110164f6
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Wed Feb 6 20:29:41 2013 -0600
+
+    takes input form stdin.
+
+commit 56bcd83a19830bab10959891b45eb28b3c3b6436
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 5 17:40:17 2013 -0600
+
+    work with one input file
+
+commit d6c33fd6b81946952d5ba8bcaa9888b5b0cd3cc9
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 5 16:49:55 2013 -0600
+
+    update main loop
+
+commit 0b38f65fda83ac811a0f298d8ff66dcf3fa10472
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 5 16:14:02 2013 -0600
+
+    renaming, now work with search with one child per generation
+
+commit 87d80c39fcccd433d140deb6e6887aaa340b2bf9
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 5 15:54:50 2013 -0600
+
+    fixed bug of indentation:
+
+commit 85a71099a86d3fe6596d34345b5eb9726542d1de
+Author: Jianyong Meng <mengjy02@gmail.com>
+Date:   Tue Feb 5 15:48:47 2013 -0600
+
+    added makefile
+
+commit c67142d60831200f55dd238e9fcf25c50ee7a9e9
+Author: Collin Murphy <cbmurphy@utexas.edu>
+Date:   Tue Feb 5 15:23:03 2013 -0600
+
+    Initial commit
+
+commit 07a9ba329b067bb1cc9c45f4e2aca1b8d83b4353
+Author: cbmurphy <cbmurphy@utexas.edu>
+Date:   Tue Feb 5 13:17:32 2013 -0800
+
+    Initial commit

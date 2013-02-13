@@ -110,7 +110,6 @@ def xml_solve(r, w):
 
 if __name__ == "__main__":
   try:
-    f = open("2.xml")
-    xml_solve(f, sys.stdout)
+    xml_solve(sys.stdin, sys.stdout)
   except:
-    print "File missing!"
+    print "Input missing!"

@@ -16,8 +16,8 @@ Last Name: Murphy
 EID: cbm772
 E-mail: cbmurphy@utexas.edu
 
-Estimated number of hours:
-Actual    number of hours:
+Estimated number of hours: 15
+Actual    number of hours: 20
 
 Turnin CS Username: cbm772
 GitHub ID: cbmurphy
