@@ -13,13 +13,13 @@ E-mail: mengjy02@gmail.com
 
 First Name: Collin
 Last Name: Murphy
-EID:
+EID: cbm772
 E-mail: cbmurphy@utexas.edu
 
 Estimated number of hours:
 Actual    number of hours:
 
-Turnin CS Username:
+Turnin CS Username: cbm772
 GitHub ID: cbmurphy
 GitHub Repository Name: cs327e-xml
 
