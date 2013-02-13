@@ -28,6 +28,17 @@ turnin-submit:
 turnin-verify:
 	turnin --verify hychyc07 cs327epj2
 
+turnin:
+	make run
+	make log
+	make doc
+	make zip
+	make turnin-submit
+	make turnin-list
+	cd ..
+	make turnin-verify
+	make clean
+
 zip:
 	zip -r XML.zip makefile README.txt XML.html XML.log XML.py \
 	RunXML.in RunXML.out RunXML.py SphereXML.py \
